@@ -15,6 +15,8 @@ public class Door : MonoBehaviour
         if (opening && transform.position.x < 10) {
           // TODO
           //transform.position.x = transform.position.x + 0.1;
+
+          transform.position = new Vector3(transform.position.x, transform.position.y + 0.05f, transform.position.z);
         }
     }
 
@@ -24,7 +26,7 @@ public class Door : MonoBehaviour
         // (optionally) Else
             // Play a sound to indicate the door is locked
         if (!locked) {
-          opening = false;
+          opening = true;
           AudioSource audio = GetComponents<AudioSource>()[1];
           audio.Play();
         } else {
